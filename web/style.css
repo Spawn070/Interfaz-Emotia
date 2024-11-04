@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap"); /* Importa la fuente "Open Sans" de Google Fonts */
+
+* {
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina rellenos predeterminados */
+  box-sizing: border-box; /* Ajusta el modelo de caja para incluir bordes y rellenos en el tamaño total */
+  font-family: "Open Sans", sans-serif; /* Aplica la fuente "Open Sans" a todos los elementos */
+}
+body {
+  background: -moz-linear-gradient(
+    45deg,
+    #02e1ba 0%,
+    #26c9f2 29%,
+    #d911f2 66%,
+    #ffa079 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #02e1ba 0%,
+    #26c9f2 29%,
+    #d911f2 66%,
+    #ffa079 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #02e1ba 0%,
+    #26c9f2 29%,
+    #d911f2 66%,
+    #ffa079 100%
+  );
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  /*min-height: calc(100vh - 2rem);*/
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before,
+body::after {
+  content: "";
+  width: 70vmax;
+  height: 70vmax;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.07);
+  left: -20vmin;
+  top: -20vmin;
+  animation: morph 15s linear infinite alternate, spin 20s linear infinite;
+  z-index: 1;
+  will-change: border-radius, transform;
+  transform-origin: 55% 55%;
+  pointer-events: none;
+}
+
+body::after {
+  width: 70vmin;
+  height: 70vmin;
+  left: auto;
+  right: -10vmin;
+  top: auto;
+  bottom: 0;
+  animation: morph 10s linear infinite alternate,
+    spin 26s linear infinite reverse;
+  transform-origin: 20% 20%;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  }
+  100% {
+    border-radius: 40% 60%;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.st0 {
+  display: none;
+}
+.st1 {
+  display: inline;
+}
+.st2 {
+  opacity: 0.29;
+}
+.st3 {
+  fill: #ffffff;
+}
+.st4 {
+  clip-path: url(#SVGID_2_);
+  fill: #ffffff;
+}
+.st5 {
+  clip-path: url(#SVGID_4_);
+}
+.st6 {
+  clip-path: url(#SVGID_6_);
+}
+.st7 {
+  clip-path: url(#SVGID_8_);
+}
+.st8 {
+  clip-path: url(#SVGID_10_);
+}
+.st9 {
+  fill: none;
+}
+.st10 {
+  clip-path: url(#SVGID_12_);
+}
+.st11 {
+  opacity: 0.7;
+}
+.st12 {
+  clip-path: url(#SVGID_14_);
+}
+.st13 {
+  opacity: 0.2;
+}
+.st14 {
+  clip-path: url(#SVGID_16_);
+}
+.st15 {
+  opacity: 0.3;
+  fill: #ffffff;
+  enable-background: new;
+}
+/* Estilos para el encabezado */
+h2 {
+  font-size: 4rem; /* Tamaño de fuente de 2rem */
+  margin-bottom: 20px; /* Margen inferior de 20px */
+  color: #fff; /* Color del texto blanco */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
+  backdrop-filter: blur(15px); /* Aplica un efecto de desenfoque de fondo */
+  -webkit-backdrop-filter: blur(
+    12px
+  ); /* Efecto de desenfoque para navegadores basados en WebKit */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px; /* Bordes redondeados */
+  position: fixed;
+  top: 5%;
+  left: 29.5%;
+}
+
+/* Estilos para la lista de comentarios */
+#comments-list {
+  list-style-type: none; /* Sin viñetas */
+  padding: 0; /* Sin espaciado interno */
+  max-width: 600px; /* Ancho máximo de la lista */
+  margin: 20px auto; /* Centrar la lista */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
+  backdrop-filter: blur(15px); /* Aplica un efecto de desenfoque de fondo */
+  -webkit-backdrop-filter: blur(
+    12px
+  ); /* Efecto de desenfoque para navegadores basados en WebKit */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para cada comentario */
+.comment-item {
+  padding: 15px; /* Espaciado interno */
+  border-bottom: 1px solid #ddd; /* Borde inferior */
+  display: flex; /* Usar flexbox para alinear la carita */
+  align-items: center; /* Centrar verticalmente */
+}
+
+/* Estilos para la última línea de comentarios */
+.comment-item:last-child {
+  border-bottom: none; /* Sin borde en el último comentario */
+}
+
+/* Estilos para las caritas */
+.comment-icon {
+  width: 30px; /* Ancho de la carita */
+  height: 30px; /* Alto de la carita */
+  margin-right: 10px; /* Espacio entre la carita y el comentario */
+}
+
+/* Estilos para el texto del comentario */
+.comment-text {
+  flex-grow: 1; /* Ocupa el espacio restante */
+  color: #555; /* Color del texto */
+}
+
+/* Estilos para los resultados del análisis */
+.comment-result {
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  color: #777; /* Color gris claro */
+  margin-top: 5px; /* Margen superior */
+}

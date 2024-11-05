@@ -1,15 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comentarios de Alumnos</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="/web/style.css" />
+    <script src="/web/script.js" defer></script>
+  </head>
+  <body>
+    <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
     <h2>Comentarios de Alumnos</h2>
-    <ul id="comments-list"></ul> <!-- Este elemento mostrará los comentarios -->
-</body>
-</html>
+    <button class="clear-comments-button" onclick="clearComments()">
+      Eliminar Comentarios
+    </button>
+    <ul id="comments-list"></ul>
+    <!-- Este elemento mostrará los comentarios -->
 
+    <!-- Gráfico de barras verticales -->
+    <div class="sentiment-stats">
+      <div class="bar-container">
+        <div class="bar" id="positive-bar">
+          <img
+            src="https://img.freepik.com/vector-gratis/emociones-feliz-diseno_24877-82434.jpg?t=st=1730776476~exp=1730780076~hmac=9079dfb4c0f24a6e2e3707cf17d051434402698e3060615082ce5866deedb006&w=900"
+            alt="Positivo"
+          />
+        </div>
+        <div class="bar-label">
+          Positivo <span id="positive-percentage">0%</span>
+        </div>
+      </div>
+      <div class="bar-container">
+        <div class="bar" id="negative-bar">
+          <img
+            src="https://img.freepik.com/vector-gratis/emociones-enojado-diseno_24877-82550.jpg?t=st=1730772764~exp=1730776364~hmac=599be4c83e3888ced732df53dcb1def44cc9ede1038427f135b45941611387df&w=900"
+            alt="Negativo"
+          />
+        </div>
+        <div class="bar-label">
+          Negativo <span id="negative-percentage">0%</span>
+        </div>
+      </div>
+      <div class="bar-container">
+        <div class="bar" id="neutral-bar">
+          <img
+            src="https://img.freepik.com/vector-gratis/emociones-confusas-diseno_24877-81606.jpg?t=st=1730773089~exp=1730776689~hmac=e2a35114ef3d4cc01bf644e199a0607f14006a70d2fd27853fa061703f20b239&w=900"
+            alt="Neutral"
+          />
+        </div>
+        <div class="bar-label">
+          Neutral <span id="neutral-percentage">0%</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

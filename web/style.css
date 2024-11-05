@@ -191,16 +191,51 @@ h2 {
 #comments-list {
   list-style-type: none; /* Sin viñetas */
   padding: 0; /* Sin espaciado interno */
-  max-width: 600px; /* Ancho máximo de la lista */
-  margin: 20px auto; /* Centrar la lista */
+  max-width: 1500px; /* Ancho máximo de la lista */
+  margin: 200px auto; /* Centrar la lista horizontalmente */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
   backdrop-filter: blur(15px); /* Aplica un efecto de desenfoque de fondo */
   -webkit-backdrop-filter: blur(
-    12px
+    15px
   ); /* Efecto de desenfoque para navegadores basados en WebKit */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  position: relative;
+  top: 40%;
+  transform: translateY(30%);
+  font-size: 1.5rem; /* Ajustar tamaño de fuente */
+  text-align: left; /* Alinear texto a la izquierda */
+  color: #333; /* Color del texto */
+  font-family: "Arial", sans-serif; /* Familia de fuente */
+}
+
+#comments-list li {
+  padding: 15px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: background 0.3s ease; /* Transición suave */
+}
+
+#comments-list li:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    1
+  ); /* Fondo completamente blanco al pasar el ratón */
+}
+
+#comments-list li span {
+  font-weight: bold; /* Negrita para el texto */
+  color: #007bff; /* Color azul para el resultado del análisis */
+}
+
+#comments-list li .sentiment {
+  font-style: italic; /* Cursiva para el sentimiento */
+  color: #ff6347; /* Color rojo tomate para el sentimiento */
 }
 
 /* Estilos para cada comentario */
@@ -233,5 +268,86 @@ h2 {
 .comment-result {
   font-size: 14px; /* Tamaño de fuente más pequeño */
   color: #777; /* Color gris claro */
-  margin-top: 5px; /* Margen superior */
+  top: 50%; /* Margen superior */
+}
+.logout-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  background: #fff; /* Fondo blanco */
+  color: #000; /* Color del texto negro */
+  font-weight: 600; /* Fuente en negrita */
+  border: none; /* Sin borde */
+  padding: 12px 20px; /* Relleno de 12px vertical y 20px horizontal */
+  cursor: pointer; /* Cambia el cursor al estilo de puntero */
+  border-radius: 3px; /* Bordes redondeados de 3px */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  border: 2px solid transparent; /* Borde transparente */
+  transition: 0.3s ease; /* Transición suave para los cambios */
+}
+
+.logout-button:hover {
+  color: #fff; /* Color del texto blanco al pasar el mouse */
+  border-color: #fff; /* Color del borde blanco al pasar el mouse */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.15
+  ); /* Fondo con transparencia al pasar el mouse */
+}
+.clear-comments-button {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  padding: 10px 20px;
+  background-color: #f44336; /* Rojo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600; /* Negrita */
+}
+
+.clear-comments-button:hover {
+  background-color: #d32f2f; /* Rojo más oscuro */
+}
+
+.sentiment-stats {
+  position: fixed; /* Fijo para mantener la posición */
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px; /* Ajusta el ancho del contenedor */
+  left: 80%;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0; /* Espacio entre las imágenes */
+}
+
+.image-container img {
+  width: 200px; /* Ancho de la imagen */
+  height: auto; /* Ajuste automático de altura */
+  transition: height 0.3s ease;
+}
+
+.image-label {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.image-label span {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
 }

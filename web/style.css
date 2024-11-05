@@ -334,20 +334,22 @@ h2 {
 }
 
 .image-container img {
-  width: 200px; /* Ancho de la imagen */
+  max-width: 250px; /* Ancho máximo de la imagen */
+  max-height: 250px; /* Altura máxima de la imagen */
+  width: 100%; /* Asegura que la imagen no se distorsione */
   height: auto; /* Ajuste automático de altura */
   transition: height 0.3s ease;
 }
 
 .image-label {
-  margin-top: 10px;
-  font-size: 1rem;
+  margin-top: 5px;
+  font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
 }
 
 .image-label span {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #555;
 }

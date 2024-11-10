@@ -37,7 +37,8 @@ body {
   flex-direction: column;
   align-items: stretch;
   justify-content: space-evenly;
-  overflow: hidden;
+  overflow: hidden; /* Evita el desplazamiento horizontal */
+  background-attachment: fixed; /* Fija el fondo */
   position: relative;
 }
 
@@ -211,7 +212,7 @@ h2 {
 #comments-list li {
   padding: 15px;
   margin: 10px 0;
-  background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  background: #630163; /* Fondo semi-transparente */
   border-radius: 5px; /* Bordes redondeados */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
   transition: background 0.3s ease; /* Transición suave */
@@ -219,17 +220,27 @@ h2 {
 
 #comments-list li:hover {
   background: rgba(255, 255, 255, 1); /* Fondo completamente blanco al pasar el ratón */
+  color: #000; /* Cambia el color del texto a negro */
+}
+#comments-list li:hover .comment-text {
+  color: #000000; /* Cambia el color del texto a negro solo para el texto de comentario */
 }
 
 #comments-list li span {
   font-weight: bold; /* Negrita para el texto */
-  color: #007BFF; /* Color azul para el resultado del análisis */
+  color: #4cb1ec; /* Color azul para el resultado del análisis */
 }
 
 #comments-list li .sentiment {
   font-style: italic; /* Cursiva para el sentimiento */
-  color: #FF6347; /* Color rojo tomate para el sentimiento */
+  color: #e0d649; /* Color rojo tomate para el sentimiento */
 }
+
+#comments-list li .materia {
+  font-style: italic; /* Cursiva para el sentimiento */
+  color: #bbff00; /* Color rojo tomate para el sentimiento */
+}
+
 
   
 
@@ -265,10 +276,48 @@ h2 {
   color: #777; /* Color gris claro */
   top: 50%; /* Margen superior */
 }
+
+.comment-counter {
+  text-align: center;
+  color: #ffffff;
+  margin: 20px auto; /* Centrado automático */
+  padding: 20px;
+  width: 500px; /* Ancho fijo para el contador */
+  font-size: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; /* Disposición vertical */
+  align-items: center; /* Centrado horizontal */
+  position: fixed;
+  top: 45%;
+  left: 1%;
+}
+
+.comment-counter h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+  white-space: nowrap; 
+}
+
+.comment-counter #comment-count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  background-color: #800080;
+  padding: 10px 40px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
 .logout-button {
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
     padding: 10px 20px;
     background: #fff; /* Fondo blanco */
   color: #000; /* Color del texto negro */
@@ -295,9 +344,9 @@ h2 {
 .clear-comments-button {
   position: absolute;
   top: 80px;
-  left: 10px;
+  right: 10px;
   padding: 10px 20px;
-  background-color: #f44336; /* Rojo */
+  background-color: #a700a7; /* Rojo */
   color: white;
   border: none;
   border-radius: 5px;
@@ -306,7 +355,7 @@ h2 {
 }
 
 .clear-comments-button:hover {
-  background-color: #d32f2f; /* Rojo más oscuro */
+  background-color: #800080; /* Rojo más oscuro */
 }
 
 .sentiment-stats {
@@ -326,6 +375,9 @@ h2 {
   flex-direction: column;
   align-items: center;
   margin: 20px 0; /* Espacio entre las imágenes */
+  background-color: #800080; /* Fondo morado */
+  padding: 15px; /* Espacio alrededor de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
 .image-container img {
@@ -333,6 +385,7 @@ h2 {
   max-height: 250px; /* Altura máxima de la imagen */
   width: 100%; /* Asegura que la imagen no se distorsione */
   height: auto; /* Ajuste automático de altura */
+  border-radius: 8px; /* Ajusta esto si quieres bordes redondeados también para la imagen */
   transition: height 0.3s ease;
 }
 
@@ -341,10 +394,11 @@ h2 {
   font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
+  color: #fff;
 }
 
 .image-label span {
   display: block;
   font-size: 0.8rem;
-  color: #555;
+  color: #ffffff;
 }

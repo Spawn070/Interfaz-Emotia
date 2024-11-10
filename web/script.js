@@ -1,4 +1,5 @@
 let comments = JSON.parse(localStorage.getItem("comments")) || []; // Cargar comentarios del localStorage
+let commentCount = comments.length; // Establece la cantidad inicial de comentarios
 
 document.getElementById("login-form")
   document.addEventListener("submit", function (event) {
@@ -35,7 +36,9 @@ function submitComment() {
             console.log("Comentario enviado con éxito");
             document.getElementById("comment").value = "";
             showAlert("¡Gracias por tu comentario! <br> </br>  ¡Tu opinión ayudara a hacer de nuestras clases una mejor experiencia! ");
-              
+            // Incrementar el contador de comentarios y actualizar en localStorage
+            commentCount++;
+        localStorage.setItem("commentCount", commentCount);
           });
   } else {
     console.log("El campo de comentario está vacío");
@@ -149,10 +152,20 @@ if (document.getElementById("comments-list")) {
 function clearComments() {
   localStorage.removeItem("comments"); // Elimina la clave "comments" del localStorage
   comments = []; // Resetea el array de comentarios
+  updateCommentCount(0); // Reinicia el contador de comentarios a "0" en la página
   displayComments(); // Actualiza la interfaz
+
+}
+
+function updateCommentCount(count) {
+  document.getElementById("comment-count").textContent = `${count}`;
 }
 
 // Para cargar los comentarios al abrir la página docente
 if (document.getElementById("comments-list")) {
   displayComments();
+}
+// Al cargar la página de docentes, actualizar el contador de comentarios
+if (document.getElementById("comment-count")) {
+  updateCommentCount(commentCount);
 }

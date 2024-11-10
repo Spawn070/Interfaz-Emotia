@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,39 @@
     <link rel="stylesheet" href="/web/style.css">
     <script src="/web/script.js" defer></script>
 </head>
+
 <body>
     <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
     <h2>Comentarios de Alumnos</h2>
     <button class="clear-comments-button" onclick="clearComments()">Eliminar Comentarios</button>
-    <ul id="comments-list"></ul> <!-- Este elemento mostrará los comentarios -->
 
+
+    <ul id="comments-list"></ul> <!-- Este elemento mostrará los comentarios -->
+    
+    <div class="comment-counter">
+        <h3>Comentarios recibidos esta semana:</h3>
+        <p id="comment-count">0</p>
+    </div>
     <!-- Imágenes de sentimiento con porcentaje -->
     <div class="sentiment-stats">
         <div class="image-container">
-            <img src="https://img.freepik.com/vector-gratis/emociones-feliz-diseno_24877-82434.jpg?ga=GA1.1.206972488.1730772738&semt=ais_hybrid" alt="Positivo">
+            <img src="https://iili.io/2TR93Dg.md.png"
+                alt="Positivo">
             <div class="image-label">Positivo <span id="positive-percentage">0%</span></div>
         </div>
         <div class="image-container">
-            <img src="https://img.freepik.com/vector-gratis/emociones-enojado-diseno_24877-82550.jpg?ga=GA1.1.206972488.1730772738&semt=ais_hybrid" alt="Negativo">
+            <img src="https://iili.io/2TR92OF.md.png"
+                alt="Negativo">
             <div class="image-label">Negativo <span id="negative-percentage">0%</span></div>
         </div>
         <div class="image-container">
-            <img src="https://img.freepik.com/vector-gratis/emociones-confusas-diseno_24877-81606.jpg?ga=GA1.1.206972488.1730772738&semt=ais_hybrid" alt="Neutral">
+            <img src="https://iili.io/2TR9Kxa.md.png"
+                alt="Neutral">
             <div class="image-label">Neutral <span id="neutral-percentage">0%</span></div>
+
+
         </div>
     </div>
+    
 </body>
 </html>

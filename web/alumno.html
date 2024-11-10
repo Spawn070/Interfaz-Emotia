@@ -9,6 +9,7 @@
 </head>
 <body>
     <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
+    <button class="historial-button" onclick="openHistorialModal()">Historial</button>
      <div class="area">
         <ul class="circles">
             <li></li>
@@ -51,5 +52,17 @@
             <p id="modal-message"></p>
         </div>
     </div>
+
+     <!-- Modal para el historial -->
+     <div id="historialModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeHistorialModal()">&times;</span>
+            <h2>Historial de Comentarios</h2>
+    <ul id="comments-list">
+        <!-- Aquí se agregarán los comentarios -->
+    </ul>
+        </div>
+    </div>
+    
 </body>
 </html>

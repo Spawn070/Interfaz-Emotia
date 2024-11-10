@@ -9,7 +9,7 @@
 </head>
 <body>
     <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
-    <div class="area">
+     <div class="area">
         <ul class="circles">
             <li></li>
             <li></li>
@@ -22,12 +22,26 @@
             <li></li>
             <li></li>
 
-            <div id="comment-section">
-                <h2>Ingrese su comentario</h2>
-                <input type="text" id="comment" placeholder="Comentario">
-                <button onclick="submitComment()">Enviar Comentario</button>
-            </div>
+            
         </ul>
+
+        <div id="comment-section">
+            <h2>Ingrese su comentario</h2>
+            <select id="materias" name="select">
+                <option value="Programación 1">Programación 1</option>
+                <option value="Análisis Matematico" >Análisis Matematico</option>
+                <option value="Administración">Administración</option>
+                <option value="Computación">Computación</option>
+                <option value="Química" >Química</option>
+                <option value="Informática 1">Informática 1</option>
+                <option value="Calidad de Software">Calidad de Software</option>
+                <option value="Álgebra" >Álgebra</option>
+
+              </select>
+            <input type="text" id="comment" placeholder="Comentario">
+            <br></br>
+            <button onclick="submitComment()">Enviar Comentario</button>
+        </div>
     </div>
 
     <!-- Modal para la alerta -->

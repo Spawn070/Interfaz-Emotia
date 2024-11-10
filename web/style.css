@@ -231,6 +231,7 @@ h2 {
   color: #FF6347; /* Color rojo tomate para el sentimiento */
 }
 
+
   
 
 /* Estilos para cada comentario */
@@ -265,6 +266,40 @@ h2 {
   color: #777; /* Color gris claro */
   top: 50%; /* Margen superior */
 }
+
+.comment-counter {
+  text-align: center;
+  color: #ffffff; /* Color morado */
+  margin-top: 20px; /* Espacio superior */
+}
+
+.comment-counter h3 {
+  font-size: 2rem; /* Tamaño de fuente de 2rem */
+  margin-bottom: 20px; /* Margen inferior de 20px */
+  color: #fff; /* Color del texto blanco */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
+  backdrop-filter: blur(15px); /* Aplica un efecto de desenfoque de fondo */
+  -webkit-backdrop-filter: blur(
+    12px
+  ); /* Efecto de desenfoque para navegadores basados en WebKit */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px; /* Bordes redondeados */
+  position: fixed;
+  top: 64%;
+  left: 34.5%;
+}
+
+
+.comment-counter #comment-count {
+  display: inline-block;
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: white; /* Texto en blanco */
+  background-color: #800080; /* Fondo morado */
+  padding: 10px 40px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
 .logout-button {
     position: absolute;
     top: 10px;

@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  overflow: hidden;
 }
 .context {
   width: 100%;
@@ -149,9 +150,10 @@ body {
     12px
   ); /* Efecto de desenfoque para navegadores basados en WebKit */
   background: rgba(255, 255, 255, 0.2);
-  position: fixed; /* Fija el contenedor */
-  top: 30%; /* Posición en la parte superior */
-  left: 34%; /* Centra horizontalmente */
+ 
+  position: relative;
+  top: 25%; /* Posición en la parte superior */
+  left: 32%; /* Centra horizontalmente */
 }
 
 /* Estilos para el encabezado */
@@ -197,12 +199,38 @@ button:hover {
   ); /* Fondo con transparencia al pasar el mouse */
 }
 
+.historial-button {
+  position: absolute;
+  top: 20px;
+  right: 250px;
+
+  padding: 25px 40px;
+  background: #fff; /* Fondo blanco */
+  color: #000; /* Color del texto negro */
+  font-weight: 600; /* Fuente en negrita */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al estilo de puntero */
+  border-radius: 3px; /* Bordes redondeados de 3px */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  border: 2px solid transparent; /* Borde transparente */
+  transition: 0.3s ease; /* Transición suave para los cambios */
+  z-index: 10; /* Asegura que esté en el frente */
+  display: inline-block; /* Asegura que el botón se ajuste correctamente */
+  margin: 0; /* Asegura que no haya margen que cause problemas */
+}
+
+.historial-button:hover {
+  color: #fff; /* Color del texto blanco al pasar el mouse */
+  border-color: #fff; /* Color del borde blanco al pasar el mouse */
+  background: rgba(255, 255, 255, 0.15); /* Fondo con transparencia al pasar el mouse */
+}
 
 
 .logout-button {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    right: 50px;
+
     padding: 25px 40px;
     background: #fff; /* Fondo blanco */
     color: #000; /* Color del texto negro */
@@ -218,30 +246,6 @@ button:hover {
     margin: 0; /* Asegura que no haya margen que cause problemas */
 }
 
-.logout-button:hover {
-    color: #fff; /* Color del texto blanco al pasar el mouse */
-    border-color: #fff; /* Color del borde blanco al pasar el mouse */
-    background: rgba(255, 255, 255, 0.15); /* Fondo con transparencia al pasar el mouse */
-}
-
-.logout-button {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 25px 40px;
-  background: #fff; /* Fondo blanco */
-  color: #000; /* Color del texto negro */
-  font-weight: 600; /* Fuente en negrita */
-  border: none; /* Sin borde */
-  cursor: pointer; /* Cambia el cursor al estilo de puntero */
-  border-radius: 3px; /* Bordes redondeados de 3px */
-  font-size: 16px; /* Tamaño de fuente de 16px */
-  border: 2px solid transparent; /* Borde transparente */
-  transition: 0.3s ease; /* Transición suave para los cambios */
-  z-index: 10; /* Asegura que esté en el frente */
-  display: inline-block; /* Asegura que el botón se ajuste correctamente */
-  margin: 0; /* Asegura que no haya margen que cause problemas */
-}
 
 .logout-button:hover {
   color: #fff; /* Color del texto blanco al pasar el mouse */
@@ -287,3 +291,41 @@ button:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+select{
+  
+  
+  margin: 10px 0; /* Margen superior e inferior */
+
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+
+
+  background: #fff; /* Fondo blanco */
+  color: #000; /* Color del texto negro */
+  font-weight: 600; /* Fuente en negrita */
+  border: none; /* Sin borde */
+  padding: 12px 20px; /* Relleno de 12px vertical y 20px horizontal */
+  cursor: pointer; /* Cambia el cursor al estilo de puntero */
+  border-radius: 3px; /* Bordes redondeados de 3px */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  border: 2px solid transparent; /* Borde transparente */
+  transition: 0.3s ease; /* Transición suave para los cambios */
+}
+
+#continue-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #4E54C8;
+  color: #fff;
+  margin-top: 20px;
+  padding: 10px 20px;
+
+}
+
+#continue-button:hover {
+  background: rgba(255, 255, 255, 0.15); /* Fondo con transparencia al pasar el mouse */
+  color: #000000; /* Color del texto blanco al pasar el mouse */
+  border-color: #000000; /* Color del borde blanco al pasar el mouse */
+}
+

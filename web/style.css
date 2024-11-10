@@ -280,7 +280,7 @@ h2 {
 .comment-counter {
   text-align: center;
   color: #ffffff;
-  margin: 20px auto; /* Centrado automático */
+  margin: 20px; /* Centrado automático */
   padding: 20px;
   width: 500px; /* Ancho fijo para el contador */
   font-size: 1.5rem;
@@ -293,7 +293,7 @@ h2 {
   flex-direction: column; /* Disposición vertical */
   align-items: center; /* Centrado horizontal */
   position: fixed;
-  top: 45%;
+  top: 25%;
   left: 1%;
 }
 
@@ -312,6 +312,66 @@ h2 {
   padding: 10px 40px;
   border-radius: 10px;
   display: inline-block;
+}
+
+.data-container{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+height: 1000px;
+  width: 400px;
+justify-content: center;
+
+}
+
+.skill{
+  margin-top: 50px;
+  margin-left: 210px;
+  height: 160px;
+  width: 160px;
+  position: relative;
+}
+
+.outer{
+  height: 160px;
+  width: 160px;
+  padding: 20px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 15),-6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+}
+
+.inner{
+  height: 120px;
+  width: 120px;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+  -0.5px -0.5px 0px rgba(255,255,255, 1),0.5px 0.5px 0px rgba(0, 0, 0, 0.15),0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#number{
+  font-weight: 600;
+  color: #555;
+  font-size: 30px;
+}
+
+circle{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 450;
+  stroke-dashoffset: 420;
+}
+
+
+svg{
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .logout-button {

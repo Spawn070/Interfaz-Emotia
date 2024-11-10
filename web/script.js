@@ -137,3 +137,18 @@ function clearComments() {
 if (document.getElementById("comments-list")) {
   displayComments();
 }
+
+function setPercentage(percentage) {
+  const circle = document.querySelector("circle");
+  const numberDisplay = document.getElementById("number");
+
+  // Calcular el nuevo valor de stroke-dashoffset basado en el porcentaje
+  const dashOffset = 450 - (450 * percentage) / 100;
+  circle.style.strokeDashoffset = dashOffset;
+
+  // Actualizar el texto del porcentaje
+  numberDisplay.innerText = `${percentage}%`;
+}
+
+// Ejemplo de uso: configura el círculo al 80%
+setPercentage(80);

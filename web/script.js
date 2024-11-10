@@ -22,8 +22,9 @@ function login() {
 
 function submitComment() {
   const commentText = document.getElementById("comment").value;
+  const materia = document.getElementById("materias").value;
   if (commentText) {
-      analyzeSentiment(commentText)
+    analyzeSentiment(commentText, materia)
           .then(() => {
             console.log("No se pudo enviar el comentario");
             document.getElementById("comment").value = "";
@@ -33,7 +34,7 @@ function submitComment() {
           .catch(() => {
             console.log("Comentario enviado con éxito");
             document.getElementById("comment").value = "";
-              showAlert("¡Mensaje enviado con éxito!");
+            showAlert("¡Gracias por tu comentario! <br> </br>  ¡Tu opinión ayudara a hacer de nuestras clases una mejor experiencia! ");
               
           });
   } else {
@@ -41,18 +42,19 @@ function submitComment() {
   }
 }
 
-function analyzeSentiment(text) {
+function analyzeSentiment(text, materia) {
   return fetch("http://localhost:5000/analyze", {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
       },
-      body: JSON.stringify({ text }),
+      body: JSON.stringify({ text, materia }),
   })
   .then((response) => response.json())
   .then((data) => {
       const commentResult = {
           text: text,
+          materia: materia,
           sentiment: data.label,
           score: data.score,
       };
@@ -69,7 +71,7 @@ function analyzeSentiment(text) {
 function showAlert(message) {
   const modal = document.getElementById("alertModal");
   const modalMessage = document.getElementById("modal-message");
-  modalMessage.textContent = message;
+  modalMessage.innerHTML = message;
   modal.style.display = "block";
 }
 
@@ -85,6 +87,23 @@ window.onclick = function(event) {
       modal.style.display = "none";
   }
 }
+
+function openHistorialModal() {
+  document.getElementById("historialModal").style.display = "block";
+  displayComments(); // Llamar a displayComments para mostrar los comentarios en el modal
+}
+
+function closeHistorialModal() {
+  document.getElementById("historialModal").style.display = "none";
+}
+
+// Cerrar el modal cuando se hace clic fuera de él
+window.onclick = function(event) {
+  const historialModal = document.getElementById("historialModal");
+  if (event.target === historialModal) {
+      historialModal.style.display = "none";
+  }
+};
 
 function updateSentimentStats() {
   const totalComments = comments.length;
@@ -107,7 +126,7 @@ function displayComments() {
 
   comments.forEach((commentResult) => {
       const li = document.createElement("li");
-      li.innerHTML = `<span>${commentResult.text}</span> - <span class="sentiment">Resultado del análisis: ${commentResult.sentiment}</span>`;
+      li.innerHTML = `<span>${commentResult.text}</span> - <span>${commentResult.materia}</span> - <span class="sentiment">Resultado del análisis: ${commentResult.sentiment}</span>`;
       commentsList.appendChild(li);
   });
 

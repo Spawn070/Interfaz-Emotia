@@ -196,7 +196,9 @@ h2 {
   margin: 200px auto; /* Centrar la lista horizontalmente */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
   backdrop-filter: blur(15px); /* Aplica un efecto de desenfoque de fondo */
-  -webkit-backdrop-filter: blur(15px); /* Efecto de desenfoque para navegadores basados en WebKit */
+  -webkit-backdrop-filter: blur(
+    15px
+  ); /* Efecto de desenfoque para navegadores basados en WebKit */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -206,7 +208,7 @@ h2 {
   font-size: 1.5rem; /* Ajustar tamaño de fuente */
   text-align: left; /* Alinear texto a la izquierda */
   color: #333; /* Color del texto */
-  font-family: 'Arial', sans-serif; /* Familia de fuente */
+  font-family: "Arial", sans-serif; /* Familia de fuente */
 }
 
 #comments-list li {
@@ -219,7 +221,12 @@ h2 {
 }
 
 #comments-list li:hover {
-  background: rgba(255, 255, 255, 1); /* Fondo completamente blanco al pasar el ratón */
+  background: rgba(
+    255,
+    255,
+    255,
+    1
+  ); /* Fondo completamente blanco al pasar el ratón */
   color: #000; /* Cambia el color del texto a negro */
 }
 #comments-list li:hover .comment-text {
@@ -240,9 +247,6 @@ h2 {
   font-style: italic; /* Cursiva para el sentimiento */
   color: #bbff00; /* Color rojo tomate para el sentimiento */
 }
-
-
-  
 
 /* Estilos para cada comentario */
 .comment-item {
@@ -282,7 +286,7 @@ h2 {
   color: #ffffff;
   margin: 20px; /* Centrado automático */
   padding: 20px;
-  width: 500px; /* Ancho fijo para el contador */
+  width: 450px; /* Ancho fijo para el contador */
   font-size: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
   backdrop-filter: blur(15px);
@@ -294,14 +298,14 @@ h2 {
   align-items: center; /* Centrado horizontal */
   position: fixed;
   top: 25%;
-  left: 1%;
+  left: 0.2%;
 }
 
 .comment-counter h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #fff;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .comment-counter #comment-count {
@@ -314,52 +318,71 @@ h2 {
   display: inline-block;
 }
 
-.data-container{
+.data-container {
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
-height: 1000px;
+  height: 1000px;
   width: 400px;
-justify-content: center;
-
+  justify-content: center;
 }
 
-.skill{
-  margin-top: 50px;
-  margin-left: 210px;
+h7 {
+  font-size: 2rem; /* Tamaño de fuente de 2rem */
+  margin-bottom: 20px; /* Margen inferior de 20px */
+  color: #fff; /* Color del texto blanco */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
+  backdrop-filter: blur(15px); /* Aplica un efecto de desenfoque de fondo */
+  -webkit-backdrop-filter: blur(
+    12px
+  ); /* Efecto de desenfoque para navegadores basados en WebKit */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px; /* Bordes redondeados */
+  position: fixed;
+  top: 45%;
+  left: 2.5%;
+  font-family: "Open Sans";
+}
+
+.skill {
+  margin-top: 140px;
+  margin-left: 160px;
   height: 160px;
   width: 160px;
   position: relative;
 }
 
-.outer{
+.outer {
   height: 160px;
   width: 160px;
   padding: 20px;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 15),-6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
   border-radius: 50%;
 }
 
-.inner{
+.inner {
   height: 120px;
   width: 120px;
-  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-  -0.5px -0.5px 0px rgba(255,255,255, 1),0.5px 0.5px 0px rgba(0, 0, 0, 0.15),0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#number{
+#number {
   font-weight: 600;
   color: #555;
   font-size: 30px;
 }
 
-circle{
+circle {
   fill: none;
   stroke: url(#GradientColor);
   stroke-width: 20px;
@@ -367,19 +390,18 @@ circle{
   stroke-dashoffset: 420;
 }
 
-
-svg{
+svg {
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .logout-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 10px 20px;
-    background: #fff; /* Fondo blanco */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background: #fff; /* Fondo blanco */
   color: #000; /* Color del texto negro */
   font-weight: 600; /* Fuente en negrita */
   border: none; /* Sin borde */
@@ -392,14 +414,14 @@ svg{
 }
 
 .logout-button:hover {
-    color: #fff; /* Color del texto blanco al pasar el mouse */
-    border-color: #fff; /* Color del borde blanco al pasar el mouse */
-    background: rgba(
-      255,
-      255,
-      255,
-      0.15
-    ); /* Fondo con transparencia al pasar el mouse */
+  color: #fff; /* Color del texto blanco al pasar el mouse */
+  border-color: #fff; /* Color del borde blanco al pasar el mouse */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.15
+  ); /* Fondo con transparencia al pasar el mouse */
 }
 .clear-comments-button {
   position: absolute;
